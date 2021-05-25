@@ -27,7 +27,7 @@
 #define MIN_HEIGHT  1.0
 #define MAX_HEIGHT  15.0
 #define DEFAULT_TIMESCALE  1.0
-#define MIN_TIMESCALE  0.2
+#define MIN_TIMESCALE  0.0
 #define MAX_TIMESCALE  3.0
 #define MIN_VIEWDISTANCE  4.0
 #define MAX_VIEWDISTANCE  20.0
@@ -342,7 +342,7 @@ void AnimateScene(void)
         }
 
         // Update Fire
-        explosionController.update(dt*timescale);
+        if (timescale) explosionController.update(dt*timescale);
 	}
 
 	// Force redraw
